@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+* {
+  box-sizing: border-box;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,10 +63,15 @@ body {
   justify-content: start;
 }
 
-h1 {
+h2 {
   font-size: 2.3rem;
   letter-spacing: 0.2rem;
   line-height: 2;
+}
+
+.intro {
+  width: 60%;
+  height: 100%;
 }
 
 .intro, header, footer {
@@ -70,13 +79,81 @@ h1 {
 }
 
 .intro header {
-  width: 82%;
-  margin-top: 12rem;
+  margin-top: 10rem;
+}
+
+aside {
+  background-color: #fffefe;
+  flex: 1 0 auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  height: 100%;
+}
+
+h6 {
+  font-size: 0.8rem;
+  color: #a9a9a9;
+  letter-spacing: 0.2rem;
+}
+
+li {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  line-height: 2.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.1rem;
+  transition: width 0.3s;
+}
+
+li:nth-child(odd) a::after {
+  background: #33C3F0;
+  
+}
+
+li:nth-child(even) a::after {
+  background: #2ED78E;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+ul {
+  margin-top: 0.64rem;
+}
+
+.container {
+  margin-top: 11rem;
+  margin-left: 2rem;
+  width: 40%;
 }
 
 @media(max-width: 720px) {
+  .intro {
+    width: 80%;
+  }
   .intro header {
     margin-top: 6rem;
+  }
+  aside {
+    flex-direction: column;
+    display: none;
+  }
+  .container {
+    margin-top: 4rem;
+    flex: 0;
   }
 }
 
