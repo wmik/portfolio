@@ -7,19 +7,9 @@
   box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, h1, h2, h3, h4, h5, h6,
+p, a, ul, li, form, label, article, footer,
+header, section {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -28,8 +18,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article, footer, header {
 	display: block;
 }
 body {
@@ -38,69 +27,44 @@ body {
 ol, ul {
 	list-style: none;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
 html, body {
   height: 100%;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
-  background-color: #f5f5f9;
+  display: flex;
   color: #222;
+}
+
+.page-header {
+  flex: 1 0 60%;
+}
+
+.page-footer {
+  flex: 1 0 40%;
   display: flex;
-  justify-content: start;
+  background-color: #ffffff;
 }
 
-h2 {
-  font-size: 2.3rem;
-  letter-spacing: 0.2rem;
-  line-height: 2;
+.page-footer > .list-container {
+  flex: 1 0 33.3%;
 }
 
-.intro {
-  width: 60%;
-  height: 100%;
+.list-title {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  margin-bottom: 0.42rem;
 }
 
-.intro, header, footer {
-  padding: 0.8rem;
-}
-
-.intro header {
-  margin-top: 10rem;
-}
-
-aside {
-  background-color: #fffefe;
-  flex: 1 0 auto;
+.list-container {
   padding: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  height: 100%;
 }
 
-h6 {
-  font-size: 0.8rem;
-  color: #a9a9a9;
-  letter-spacing: 0.2rem;
-}
-
-li {
-  font-size: 0.8rem;
-  letter-spacing: 0.1rem;
-  line-height: 2.5;
+.list-item {
+  line-height: 1.72;
+  letter-spacing: 0.072rem;
+  font-size: 0.875rem;
 }
 
 a {
@@ -117,12 +81,12 @@ a::after {
   transition: width 0.3s;
 }
 
-li:nth-child(odd) a::after {
+.list-item:nth-child(odd) a::after {
   background: #33C3F0;
   
 }
 
-li:nth-child(even) a::after {
+.list-item:nth-child(even) a::after {
   background: #2ED78E;
 }
 
@@ -130,35 +94,103 @@ a:hover::after {
   width: 100%;
 }
 
-ul {
-  margin-top: 0.64rem;
+.pd-1 {
+  padding: 1rem;
 }
 
-.container {
-  margin-top: 11rem;
-  margin-left: 2rem;
-  width: 40%;
+.fs-2 {
+  font-size: 2.3rem;
 }
 
-@media(max-width: 720px) {
-  .intro {
-    width: 80%;
-  }
-  .intro header {
-    margin-top: 6rem;
-  }
-  aside {
+.ff-serif {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ff-lucida {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.fw-6 {
+  font-weight: 600;
+}
+
+.lh-2 {
+  line-height: 1.5;
+}
+
+.lh-3 {
+  line-height: 1.88;
+}
+
+.ls-2 {
+  letter-spacing: 0.15rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.mt-6 {
+  margin-top: 12rem;
+}
+
+.w-9 {
+  width: 92%;
+}
+
+.grey {
+  color: #a9a9a9;
+}
+
+.bg-white {
+  background-color: #fffefe;
+}
+
+.bg-grey {
+  background-color: #f5f5f9;
+}
+
+@media (max-width: 720px) {
+  body {
     flex-direction: column;
-    display: none;
   }
-  .container {
-    margin-top: 4rem;
-    flex: 0;
+  
+  .page-header, .page-footer {
+    flex-basis: 72%;
+  }
+
+  .page-footer {
+    margin-top: 0;
+  }
+
+  .list-container {
+    margin-top: 0;
+  }
+
+  .lh-2 {
+    line-height: 1.88;
   }
 }
 
-@media(max-width: 720px) and (min-width: 680px){
-  .intro header {
-    width: 100%;
+@media (max-width: 680px) {
+  body {
+    flex-direction: row;
+  }
+  
+  .page-header, .page-footer {
+    flex-basis: 100%;
+    margin-top: 0;
+  }
+  
+  .page-footer {
+    flex-direction: column;
+  }
+
+  .page-footer > .list-container {
+    flex: 0 0 30%;
+  }
+  
+  .w-9 {
+    width: 72%;
   }
 }
