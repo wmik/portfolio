@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  background-color: rgb(253, 253, 253);
 }
 
 .page-header {
@@ -16,6 +17,19 @@ html, body {
   display: flex;
 }
 
+.list-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.meeting-button {
+  margin-top: 1rem;
+  margin-left: 1.2rem;
+}
+
+.list-column {
+  list-style: none;
+}
 
 @media (max-width: 52.0rem) {
   .page-header {
@@ -26,10 +40,11 @@ html, body {
     margin-top: 5%;
     flex-direction: column;
   }
+
   .list-container {
-    display: flex;
     margin-top: 10%;
   }
+
   .list-column {
     min-width: 40%;
   }
@@ -39,4 +54,13 @@ html, body {
   .list-container {
     flex-direction: column;
   }
+
+  .call-to-action {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meeting-button {
+    margin-left: 0;
+}
 }
