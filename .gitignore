@@ -1,0 +1,4 @@
+# parcel cache directory
+.cache
+# dependencies
+node_modules
