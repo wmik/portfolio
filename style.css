@@ -1,3 +1,42 @@
 html, body {
   height: 100%;
 }
+
+.page-header {
+  max-width: 54%;
+}
+
+.page-footer {
+  flex: 1 0 auto;
+}
+
+.page-container {
+  height: 100%;
+  margin-top: 10%;
+  display: flex;
+}
+
+
+@media (max-width: 52.0rem) {
+  .page-header {
+    max-width: 100%;
+  }
+
+  .page-container {
+    margin-top: 5%;
+    flex-direction: column;
+  }
+  .list-container {
+    display: flex;
+    margin-top: 10%;
+  }
+  .list-column {
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 40rem) {
+  .list-container {
+    flex-direction: column;
+  }
+}
