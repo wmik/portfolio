@@ -3,4 +3,5 @@
 Personal website
 
 ## License
-MIT &copy; 2019
+All Rights Reserved
+&copy; 2019
